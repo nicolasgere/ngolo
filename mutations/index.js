@@ -1,2 +1,3 @@
 var user = require('./user')
-module.exports = [user]
+var team = require('./team')
+module.exports = [user,team]

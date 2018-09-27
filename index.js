@@ -91,7 +91,9 @@ MongoClient.connect(url, function (err, client) {
     const dbMongo = client.db(dbName);
     const db = {
         users: dbMongo.collection('users'),
-        tokens: dbMongo.collection('tokens')
+        tokens: dbMongo.collection('tokens'),
+        teams:dbMongo.collection('teams'),
+        members:dbMongo.collection('members')
     }
     db.users.ensureIndex("email", { unique: true }, () => { })
     const server = new ApolloServer({

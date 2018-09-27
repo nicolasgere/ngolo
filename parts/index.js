@@ -1,3 +1,4 @@
 var root = require('./root')
 var user = require('./user')
-module.exports = [root,user]
+var team = require('./team')
+module.exports = [root,user,team]

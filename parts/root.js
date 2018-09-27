@@ -10,7 +10,7 @@ module.exports = {
     resolvers: {
         Query: {
             async me(root, args, { db, user }) {
-                if (user) throw new AuthenticationError('must authenticate');
+                if (!user) throw new AuthenticationError('must authenticate');
                 var res = await db.users.findOne({ "_id": ObjectID(user) })
                 return res
             },
